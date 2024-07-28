@@ -8,6 +8,7 @@
     --text-light: #9ca3af;
     --white: #ffffff;
     --max-width: 1200px;
+    --blue: #0000FF;
   }
 
 * {
@@ -38,6 +39,7 @@ body {
 .header__text {
   flex: 1;
   max-width: 50%;
+  padding-top: 1rem; /* Adjust this value to push the text down */
 }
 
 .header__image {
@@ -103,6 +105,33 @@ body {
   flex-wrap: wrap;
 }
 
+.section__specialtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden; /* Ensures the text is clipped when animating */
+  white-space: nowrap; /* Keeps text in a single line */
+  opacity: 0; /* Initial opacity for fade-in effect */
+  transform: translateX(-100%); /* Initial position for slide-in effect */
+  animation: fadeInSlideIn 2s forwards; /* Apply fade-in and slide-in animations */
+  margin-left: -9.4rem;
+}
+
+@keyframes fadeInSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section__specialtitle span {
+  color: var(--secondary-color);
+}
+
 .section__title {
   font-size: 2rem;
   font-weight: 600;
@@ -131,7 +160,6 @@ body {
   text-align: center;
 }
 
-
 .section__title span {
   color: var(--secondary-color);
 }
@@ -147,20 +175,23 @@ img {
 }
 
 .btn {
-  padding: 1rem;
+  padding: 1rem 2rem; /* Increase horizontal padding for a longer button */
   font-size: 0.9rem;
   font-weight: 600;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px; /* More rounded corners */
   color: var(--white);
-  background-color: var(--secondary-color);
+  background-color: #000000; /* Black background */
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 0 5px #ffffff; /* Initial glow effect */
+  margin-left: 7rem; /* Adjust as needed */
 }
 
 .btn:hover {
-  background-color: var(--secondary-color-dark);
+  background-color: #000000; /* Ensure the background remains black */
+  box-shadow: 0 0 15px #ffffff; /* Enhanced glow effect on hover */
 }
 
 a {
@@ -192,6 +223,11 @@ a {
     --white: #ffffff;
     --max-width: 1200px;
   }
+
+  html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+  }
+
   nav {
     position: fixed;
     width: 100%;
@@ -348,6 +384,59 @@ header {
 .about {
   background-color: var(--text-dark);
   color: var(--white);
+  position: relative; /* Ensure relative positioning for child absolute elements */
+}
+
+.about__container {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  position: relative;
+}
+
+/* Content styling */
+.about__content {
+  flex: 1; /* Allow content to take available space */
+  max-width: 80%; /* Limit content width */
+}
+
+/* Heading styling */
+.about__content h2 {
+  color: var(--white); /* White color for main heading */
+}
+
+/* Subheading styling */
+.about__content h3 {
+  font-size: 1.5rem; /* Font size for subheadings */
+  font-weight: 600; /* Font weight for subheadings */
+  margin-top: 2rem; /* Margin top for spacing */
+  color: var(--white); /* White color for subheadings */
+}
+
+/* Soft skills list styling */
+.soft-skills {
+  list-style-type: disc; /* Bulleted list */
+  margin: 1rem 0; /* Margin for spacing */
+  padding-left: 1.5rem; /* Indent list items */
+}
+
+/* Soft skills list item styling */
+.soft-skills li {
+  margin-bottom: 0.5rem; /* Space between list items */
+  font-size: 1rem; /* Font size for list items */
+  color: var(--white); /* White color for list items */
+}
+.question-mark-logo {
+  font-size: 8rem; /* Adjust size as needed */
+  color: var(--white); /* White color for visibility */
+  position: absolute;
+  right: -2rem; /* Adjust to position the logo as needed */
+  top: 0;
+  transform: translateY(1rem); /* Adjust vertical positioning */
+  z-index: 10; /* Ensure it's on top */
+}
+
+.question-mark-logo i {
+  font-size: 100%; /* Adjust to fit the container */
 }
 
 .skills {
@@ -566,16 +655,39 @@ header {
 }
 
 .social__icons .icon {
-  padding: 0.5rem;
-  border-radius: 5px;
-  color: var(--white);
-  background-color: var(--secondary-color);
+  padding: 0.5rem 2rem; /* Increase horizontal padding for length */
+  border-radius: 50px; /* Large border-radius for rounded effect */
+  color: var(--white); /* Text/icon color */
+  background-color: black; /* Background color */
   transition: 0.3s;
   cursor: pointer;
+  text-align: center; /* Center text/icon */
+  display: flex; /* Flex container for alignment */
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle white glow */
 }
 
 .social__icons .icon:hover {
-  background-color: var(--secondary-color-dark);
+  background-color: black; /* Keeps the background color black on hover */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.5); /* Bright white glow on hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adds a glowing effect to text/icons */
+}
+
+.footer {
+  background-color: var(--primary-color); /* Match this with your primary color or any color you prefer */
+  color: var(--white); /* White text color or adjust as needed */
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.875rem; /* Adjust font size as needed */
 }
 
 .footer__form {
