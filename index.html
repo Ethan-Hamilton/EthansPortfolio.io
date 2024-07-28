@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
+
     <title>Web Design Mastery | Personal Portfolio Page</title>
   </head>
   <body>
@@ -32,7 +34,7 @@
         <div class="header__text">
           <p>Welcome, I'm</p>
           <h1>Ethan Hamilton</h1>
-          <h2 class="section__title">Future <span>Software Developer</span></h2>
+          <h2 class="section__specialtitle">Future <span>Software Developer</span></h2>
           <p>
             Welcome to my portfolio, which I've created to showcase 
             my creativity, personal details, and projects. As an individual 
@@ -67,9 +69,22 @@
             My goal is to build a successful career in IT, creating solutions 
             that make a difference.
           </p>
-        </div>
-      </div>
+          <h3>Soft Skills</h3>
+          <ul class="soft-skills">
+            <li>Team Collaboration</li>
+            <li>Time Management</li>
+            <li>Problem-Solving</li>
+            <li>Quick Learner</li>
+            <li>Adaptability</li>
+            <li>Industrious</li>
+            <li>Persistent</li>
+          </ul>
+          <div class="question-mark-logo">
+            <!-- Using a font icon for the question mark -->
+            <i class="ri-question-mark-line"></i>
+          </div>
     </section>
+    
 
     <section id="skills" class="skills">
       <div class="section__container">
@@ -158,13 +173,24 @@
             <p></p>
           </div>
           <div class="social__icons">
-            <a href="#" class="icon"><i class="ri-mail-line"></i></a>
-            <a href="#" class="icon"><i class="ri-github-fill"></i></a>
-            <a href="#" class="icon"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="icon"><i class="ri-instagram-fill"></i></a>
+            <a href="mailto:ethanh902@gmail.com" class="icon" title="Email">
+              <i class="ri-mail-line"></i>
+            </a>
+            <a href="https://github.com/Ethan-Hamilton" class="icon" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ethan-hamilton-4724a52b4" class="icon" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/_ethan_hamilton" class="icon" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i class="ri-instagram-fill"></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <p>© 2024 Ethan Hamilton. All rights reserved.</p>
+    </footer>
   </body>
 </html>
