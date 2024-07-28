@@ -25,28 +25,112 @@ body {
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 5rem 1rem;
+  padding: 2rem 1rem; /* Reduce padding to compact the spacing */
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header__text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.header__image {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__image img {
+  border-radius: 50%; /* Round border */
+  width: 400px; /* Slightly larger size */
+  height: 400px; /* Ensure it remains circular */
+  margin-left: 1rem; /* Space between text and image */
+  border: 5px solid var(--white); /* White border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  animation: spin 4s infinite; /* Spinning effect with pause */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.header__text p:first-of-type {
+  font-size: 1.2rem; /* Adjust font size for the "Welcome, I'm" text */
+  margin-bottom: 0.25rem; /* Reduce margin to bring it closer to "Ethan Hamilton" */
+}
+
+.header__text h1 {
+  font-size: 2rem; /* Smaller font size for "Ethan Hamilton" */
+  line-height: 2.5rem; /* Adjust line-height to match the new font-size */
+  margin-bottom: 0.5rem; /* Reduce margin to bring it closer to the paragraph */
+}
+
+.header__text .section__title {
+  font-size: 1.5rem; /* Smaller font size for "Future Software Dev." */
+  line-height: 2rem; /* Adjust line-height to match the new font-size */
+  margin-bottom: 1rem; /* Reduce margin to bring it closer to the paragraph */
+}
+
+.header__text p {
+  color: var(--text-light);
+  max-width: 400px;
+  margin: 0.5rem 0; /* Reduce margin to compact paragraph spacing */
+}
+
+.action__btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .section__title {
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    overflow: hidden; /* Ensures the text is clipped when animating */
-    white-space: nowrap; /* Keeps text in a single line */
-    border-right: 0.15em solid var(--secondary-color); /* Cursor effect */
-    animation: typing 4s steps(40, end), blink 0.75s step-end infinite; /* Apply typing and cursor blink animations */
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden; /* Ensures the text is clipped when animating */
+  white-space: nowrap; /* Keeps text in a single line */
+  opacity: 0; /* Initial opacity for fade-in effect */
+  transform: translateX(-100%); /* Initial position for slide-in effect */
+  animation: fadeInSlideIn 2s forwards; /* Apply fade-in and slide-in animations */
+}
+
+@keyframes fadeInSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
-  
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  @keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--secondary-color); }
-  }
+}
+
+.section__subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
 
 .section__title span {
   color: var(--secondary-color);
@@ -190,7 +274,7 @@ a {
 
 header {
   height: 100vh;
-  background-color: var(--text-dark);
+  background-color: var(--primary-color);
   color: var(--white);
 }
 
@@ -268,8 +352,101 @@ header {
 
 .skills {
   background-color: var(--primary-color);
+  padding: 50px 0;
   color: var(--white);
 }
+
+/* Flexbox layout for the skills grid */
+.skills__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem; /* Adjust gap as needed */
+  margin-top: 2rem;
+}
+
+/* Styling for frontend and backend sections */
+.skills__frontend, .skills__backend {
+  flex: 1;
+  padding: 2rem;
+  border-radius: 15px; /* Rounded edges for the whole section */
+  border: 2px solid var(--white); /* White outline */
+  background-color: transparent; /* Clear fill color */
+  position: relative; /* To position the pseudo-element */
+}
+
+/* Glowing effect */
+.skills__frontend::before, .skills__backend::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 20px;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 20px var(--white);
+  animation: glow 2s infinite;
+}
+
+/* Header styling for both sections */
+.skills__frontend h3, .skills__backend h3 {
+  text-align: center;
+  color: var(--white); /* White color for the headers */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Styling for the skill items container */
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual skill item styling */
+.skill__item {
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: var(--white); /* Ensure text is white */
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between icon and text */
+  font-size: 1.2rem; /* Adjust as needed */
+}
+
+/* Hover effect for skill items */
+.skill__item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Keyframes for glowing effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--white);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--white);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--white);
+  }
+}
+
+/* Icon styling */
+.skill__item i {
+  font-size: 1.5rem; /* Adjust icon size as needed */
+}
+.icon-html { color: #e34f26; } /* HTML color */
+.icon-css { color: #1572b6; } /* CSS color */
+.icon-js { color: #f7df1e; } /* JavaScript color */
+.icon-springboot { color: #6db33f; } /* SpringBoot color */
+.icon-csharp { color: #0078d7; } /* C# color */
+.icon-java { color: #007396; } /* Java color */
+.icon-cpp { color: #00599c; } /* C++ color */
+.icon-python { color: #306998; } /* Python color */
+.icon-database { color: #f29111; } /* Database color */
+
+
 
 .project {
   background-color: var(--text-dark);
