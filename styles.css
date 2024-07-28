@@ -574,9 +574,28 @@ header {
 .service__grid,
 .project__grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-  margin-top: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project__card {
+  border: 2px solid var(--white); /* White border around each card */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Ensure border-radius is applied to the image */
+  text-align: center; /* Center align the title */
+  background-color: var(--background-color); /* Optional: adjust background if needed */
+}
+
+.project__image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-bottom: 2px solid var(--white); /* White border below the image */
+}
+
+.project__title {
+  margin: 0.5rem 0;
+  color: var(--white); /* White text color for the title */
+  font-size: 1rem; /* Adjust font size if needed */
 }
 
 .service__card {
