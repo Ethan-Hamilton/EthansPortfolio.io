@@ -235,7 +235,7 @@ a {
   html {
     scroll-behavior: smooth; /* Enable smooth scrolling */
   }
-
+  
   nav {
     position: fixed;
     width: 100%;
@@ -247,6 +247,11 @@ a {
     align-items: center;
     background-color: var(--primary-color);
     z-index: 1000;
+    /* Gradient border styling */
+    border-bottom: 4px solid transparent; /* Transparent border for the gradient effect */
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Gradient color */
+    background-clip: padding-box; /* Ensure gradient only shows under border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a subtle 3D effect */
   }
   
   nav .nav__content {
