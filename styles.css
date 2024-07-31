@@ -22,6 +22,14 @@ body {
   color: var(--text-dark);
   background-color: var(--white);
 }
+p {
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+
+/* Hover effect for paragraphs */
+p:hover {
+  transform: scale(1.05); /* Scale up by 5% */
+}
 
 .section__container {
   max-width: var(--max-width);
@@ -380,7 +388,6 @@ header {
 .contact {
   padding: 5rem 0;
 }
-
 .about {
   background-color: var(--text-dark);
   color: var(--white);
@@ -393,9 +400,22 @@ header {
   position: relative;
 }
 
+.about__image {
+  flex: 1 1 60%; /* Decrease the flex basis to make the image container smaller */
+  margin-right: 2rem; /* Space between image and content */
+}
+
+/* Image styling */
+.about__rectangle-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: add some rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+
 /* Content styling */
 .about__content {
-  flex: 1; /* Allow content to take available space */
+  flex: 1 1 40%; /* Adjust the content flex basis accordingly */
   max-width: 80%; /* Limit content width */
 }
 
@@ -417,26 +437,6 @@ header {
   list-style-type: disc; /* Bulleted list */
   margin: 1rem 0; /* Margin for spacing */
   padding-left: 1.5rem; /* Indent list items */
-}
-
-/* Soft skills list item styling */
-.soft-skills li {
-  margin-bottom: 0.5rem; /* Space between list items */
-  font-size: 1rem; /* Font size for list items */
-  color: var(--white); /* White color for list items */
-}
-.question-mark-logo {
-  font-size: 8rem; /* Adjust size as needed */
-  color: var(--white); /* White color for visibility */
-  position: absolute;
-  right: -2rem; /* Adjust to position the logo as needed */
-  top: 0;
-  transform: translateY(1rem); /* Adjust vertical positioning */
-  z-index: 10; /* Ensure it's on top */
-}
-
-.question-mark-logo i {
-  font-size: 100%; /* Adjust to fit the container */
 }
 
 .skills {
@@ -573,29 +573,43 @@ header {
 
 .service__grid,
 .project__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .project__card {
-  border: 2px solid var(--white); /* White border around each card */
-  border-radius: 15px; /* Rounded corners */
-  overflow: hidden; /* Ensure border-radius is applied to the image */
-  text-align: center; /* Center align the title */
-  background-color: var(--background-color); /* Optional: adjust background if needed */
+  flex: 1 1 calc(48% - 1rem); /* Adjusts each card to take 48% width minus margin */
+  margin-bottom: 1rem; /* Space between rows */
+  position: relative;
+  overflow: hidden; /* Ensure hover effect stays within bounds */
+  cursor: pointer;
 }
 
 .project__image {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  border-bottom: 2px solid var(--white); /* White border below the image */
+  height: auto;
+  transition: opacity 0.3s ease;
 }
 
 .project__title {
-  margin: 0.5rem 0;
-  color: var(--white); /* White text color for the title */
-  font-size: 1rem; /* Adjust font size if needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project__card:hover .project__image {
+  opacity: 0.3;
+}
+
+.project__card:hover .project__title {
+  opacity: 1;
 }
 
 .service__card {
@@ -682,20 +696,20 @@ header {
   cursor: pointer;
   text-align: center; /* Center text/icon */
   display: flex; /* Flex container for alignment */
-  align-items: center; /* Center align items vertically */
-  justify-content: center; /* Center align items horizontally */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle white glow */
+  align-items: center; 
+  justify-content: center; 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
 }
 
 .social__icons .icon:hover {
-  background-color: black; /* Keeps the background color black on hover */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.5); /* Bright white glow on hover */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adds a glowing effect to text/icons */
+  background-color: black; 
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.5); 
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
 }
 
 .footer {
-  background-color: var(--primary-color); /* Match this with your primary color or any color you prefer */
-  color: var(--white); /* White text color or adjust as needed */
+  background-color: var(--primary-color); 
+  color: var(--white); 
   text-align: center;
   padding: 1rem;
   position: fixed;
@@ -706,7 +720,7 @@ header {
 
 .footer p {
   margin: 0;
-  font-size: 0.875rem; /* Adjust font size as needed */
+  font-size: 0.875rem; 
 }
 
 .footer__form {
@@ -744,8 +758,8 @@ header {
   }
 
   .header__container h1 {
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 3rem;
+    line-height: 3rem;
   }
 
   .action__btns {
