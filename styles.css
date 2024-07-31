@@ -221,19 +221,34 @@ a {
       opacity: 1; /* Fully visible */
     }
   }
-  
   :root {
     --primary-color: #000000;
-    --secondary-color: #007BFF; /* Cool blue color */
-    --secondary-color-dark: #0056b3; /* Darker blue for hover */
+    --secondary-color: #007BFF;
+    --secondary-color-dark: #0056b3;
     --text-dark: #0d1319;
     --text-light: #9ca3af;
     --white: #ffffff;
     --max-width: 1200px;
   }
-
+  
   html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-behavior: smooth;
+  }
+  
+  /* General Reset and Box-Sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #94D9EA;
+    color: #333;
+    line-height: 1.6;
   }
   
   nav {
@@ -241,17 +256,16 @@ a {
     width: 100%;
     top: 0;
     left: 0;
-    padding: 1rem 2rem; /* Increased padding for better spacing */
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
     z-index: 1000;
-    /* Gradient border styling */
-    border-bottom: 4px solid transparent; /* Transparent border for the gradient effect */
-    background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Gradient color */
-    background-clip: padding-box; /* Ensure gradient only shows under border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a subtle 3D effect */
+    border-bottom: 4px solid transparent;
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    background-clip: padding-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   nav .nav__content {
@@ -259,8 +273,8 @@ a {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: var(--max-width); /* Ensure it aligns with the rest of the content */
-    margin: 0 auto; /* Center align the content within the nav */
+    max-width: var(--max-width);
+    margin: 0 auto;
   }
   
   nav .nav__logo {
@@ -271,32 +285,32 @@ a {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--white);
-    text-shadow: 0 0 5px #ffffff; /* Initial glow */
-    animation: pulseGlow 2s infinite; /* Apply the pulsing effect */
-    margin-left: 2rem; /* Move the logo more to the right */
+    text-shadow: 0 0 5px #ffffff;
+    animation: pulseGlow 2s infinite;
+    margin-left: 2rem;
   }
   
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem; /* Increased gap for better spacing */
-    margin-right: 2rem; /* Move the navigation buttons more to the left */
+    gap: 1.5rem;
+    margin-right: 2rem;
   }
   
   nav ul li {
     display: inline;
-    position: relative; /* For the hover effect */
+    position: relative;
   }
   
   nav ul li a {
-    padding: 0.75rem 1.5rem; /* Increased padding for better button size */
-    background-color: transparent; /* Remove default background */
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
     color: var(--white);
     font-weight: 600;
     text-decoration: none;
-    position: relative; /* For the pseudo-element positioning */
-    overflow: hidden; /* Ensure the pseudo-element stays within the button */
-    transition: color 0.3s; /* Smooth color transition */
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s;
   }
   
   nav ul li a::before {
@@ -305,20 +319,20 @@ a {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 3px; /* Thickness of the underline */
+    height: 3px;
     background-color: var(--secondary-color);
-    transform: scaleX(0); /* Hide the underline */
+    transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease; /* Smooth scaling effect */
+    transition: transform 0.3s ease;
   }
   
   nav ul li a:hover::before {
-    transform: scaleX(1); /* Slide in the underline on hover */
+    transform: scaleX(1);
     transform-origin: bottom left;
   }
   
   nav ul li a:hover {
-    color: var(--secondary-color); /* Change text color on hover */
+    color: var(--secondary-color);
   }
 
 header {
@@ -804,4 +818,225 @@ header {
   .project__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem; /* Increased padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  z-index: 1000;
+  border-bottom: 4px solid transparent; /* Transparent border for the gradient effect */
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Gradient color */
+  background-clip: padding-box; /* Ensure gradient only shows under border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a subtle 3D effect */
+}
+
+nav .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  text-shadow: 0 0 5px #ffffff; /* Initial glow */
+  animation: pulseGlow 2s infinite; /* Apply the pulsing effect */
+  margin-left: 2rem; /* Move the logo more to the right */
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1.5rem; /* Increased gap for better spacing */
+  margin-right: 2rem; /* Move the navigation buttons more to the left */
+}
+
+.nav-link {
+  padding: 0.75rem 1.5rem; /* Increased padding for better button size */
+  background-color: transparent; /* Remove default background */
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative; /* For the pseudo-element positioning */
+  overflow: hidden; /* Ensure the pseudo-element stays within the button */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px; /* Thickness of the underline */
+  background-color: var(--secondary-color);
+  transform: scaleX(0); /* Hide the underline */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1); /* Slide in the underline on hover */
+  transform-origin: bottom left;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color); /* Change text color on hover */
+}
+
+@keyframes pulseGlow {
+  0% {
+      text-shadow: 0 0 5px #ffffff;
+  }
+  50% {
+      text-shadow: 0 0 15px #ffffff;
+  }
+  100% {
+      text-shadow: 0 0 5px #ffffff;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills__grid {
+      flex-direction: column;
+      align-items: center; /* Center items vertically */
+  }
+  
+  .skills__frontend, .skills__backend {
+      width: 100%; /* Full width on small screens */
+      margin-bottom: 2rem; /* Add space between sections */
+  }
+}
+
+
+
+/* Responsive styles for smaller devices */
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr; /* Stack elements in a single column */
+    padding: 1rem; /* Adjust padding as needed */
+  }
+
+  .footer__content {
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center text */
+  }
+
+  .footer__details {
+    font-size: 0.9rem; /* Slightly larger font size for better readability */
+    margin: 1rem 0; /* Adjust margin for spacing */
+    display: block; /* Stack details vertically */
+  }
+
+  .social__icons {
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+    justify-content: center; /* Center icons horizontally */
+    gap: 0.5rem; /* Reduce gap between icons */
+  }
+
+  .social__icons .icon {
+    padding: 0.5rem; /* Adjust padding for better fit */
+    font-size: 1.2rem; /* Adjust icon size for better mobile display */
+  }
+
+  .footer__form {
+    grid-template-columns: 1fr; /* Stack form elements vertically */
+  }
+
+  .footer__form :is(input, textarea) {
+    width: 100%; /* Full width for form elements */
+    padding: 0.75rem; /* Adjust padding for smaller screens */
+  }
+
+  .footer__form button {
+    width: 100%; /* Full width for buttons */
+    padding: 0.75rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .header__image {
+    display: none; /* Hides the header image on mobile devices */
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto; /* Adjust the height to fit the content */
+    padding: 2rem 1rem; /* Add padding for better spacing */
+  }
+
+  .header__container {
+    flex-direction: column; /* Stack the header text vertically */
+    align-items: center; /* Center the content */
+    justify-content: center; /* Center content vertically */
+  }
+
+  .header__text {
+    max-width: 100%; /* Ensure the text container takes full width */
+    text-align: center; /* Center-align text on mobile */
+  }
+
+  .header__text h1 {
+    font-size: 2rem; /* Adjust font size for better readability on mobile */
+  }
+
+  .header__text p {
+    font-size: 1rem; /* Adjust font size for paragraphs */
+    margin: 0.5rem 0; /* Reduce margin for better spacing */
+  }
+
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .section__specialtitle {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    text-align: center; /* Center the text */
+    padding: 0 15px; /* Add some padding on the sides */
+    margin: 0 auto; /* Center the element */
+    max-width: 100%; /* Ensure the element does not exceed the viewport width */
+    box-sizing: border-box; /* Include padding in the element’s total width */
+    overflow-wrap: break-word; /* Ensure long words break and wrap onto the next line */
+  }
+
+  .section__specialtitle span {
+    display: inline; /* Ensure span is inline */
+  }
+}
+
+@media (max-width: 768px) {
+  .about__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about__image, .about__content {
+    flex: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .about__image img {
+      max-width: 350px; /* Smaller size for mobile screens */
+    }
+  }
+
+  .about__details {
+    padding: 1rem;
+  }
+
+  .about__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about__content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.button {
+  padding: 2vh 4vw;
+}
 }
