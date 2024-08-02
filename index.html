@@ -11,34 +11,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Web Design Mastery | Personal Portfolio Page</title>
-    </head>
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#">Ethan.folio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ethan.folio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
 
       <header>
       <section id="home" class="section__container header__container">
@@ -47,7 +50,7 @@
           <h1>Ethan Hamilton</h1>
           <h2 class="section__specialtitle">Future <span>Software Developer</span></h2>
           <p>
-            This is portfolio, which I've created to showcase 
+            This is my portfolio, which I've created to showcase 
             my creativity, personal details, and projects. As an individual 
             progressing into the IT and tech industry, I am passionate about 
             creating beautiful, responsive, and user-friendly websites.
@@ -140,24 +143,33 @@
         <h2 class="section__title"><span>Latest</span> Project</h2>
         <div class="project__grid">
           <div class="project__card">
-            <img src="Gym1.jpg" alt="project" class="project__image" loading="lazy" />
-            <h3 class="project__title">Gym/Fitness App</h3>
+            <a href="https://github.com/Ethan-Hamilton/CSharp-GymWebsite" target="_blank" class="project__link">
+              <img src="Gym1.jpg" alt="project" class="project__image" loading="lazy" />
+              <h3 class="project__title">Gym/Fitness App</h3>
+            </a>
           </div>
           <div class="project__card">
-            <img src="Library.jpg" alt="project" class="project__image" loading="lazy" />
-            <h3 class="project__title">Library System</h3>
+            <a href="https://github.com/Ethan-Hamilton/Library-System-Database" target="_blank" class="project__link">
+              <img src="Library.jpg" alt="project" class="project__image" loading="lazy" />
+              <h3 class="project__title">Library System</h3>
+            </a>
           </div>
           <div class="project__card">
-            <img src="MessageApp.jpg" alt="project" class="project__image" loading="lazy" />
-            <h3 class="project__title">Texting App</h3>
+            <a href="https://github.com/Ethan-Hamilton/TextMessagingApp" target="_blank" class="project__link">
+              <img src="MessageApp.jpg" alt="project" class="project__image" loading="lazy" />
+              <h3 class="project__title">Texting App</h3>
+            </a>
           </div>
           <div class="project__card">
-            <img src="PortfolioCV.jpg" alt="project" class="project__image" loading="lazy" />
-            <h3 class="project__title">Portfolio & CV Website</h3>
+            <a href="https://github.com/Ethan-Hamilton/EthansPortfolio.io" target="_blank" class="project__link">
+              <img src="PortfolioCV.jpg" alt="project" class="project__image" loading="lazy" />
+              <h3 class="project__title">Portfolio & CV Website</h3>
+            </a>
           </div>
         </div>
       </div>
     </section>
+    
 
     <section id="contact" class="contact">
       <div class="section__container footer__container">
@@ -165,13 +177,8 @@
           <h2 class="section__title">Contact <span>Me!</span></h2>
           <p class="section__subtitle">Get In Touch</p>
           <div class="footer__details">
-            <p>
-              You can reach me by clicking any of the Links 
-              provided by the icons below. Some other important Personal information:
-            </p>
             <p>Location: South Africa, Gauteng, Johannesburg</p>
-            <p>Cell. Number: Ethan Hamilton (+27)78 188 5635</p>
-            <p></p>
+            <p>Cell Number: Ethan Hamilton (+27) 78 188 5635</p>
           </div>
           <div class="social__icons">
             <a href="mailto:ethanh902@gmail.com" class="icon" title="Email">
@@ -190,11 +197,10 @@
         </div>
       </div>
     </section>
+    
     <footer class="footer">
-      <p>© 2024 Ethan Hamilton. All rights reserved.</p>
+      <p>  2024 Ethan Hamilton. All rights reserved.</p>
     </footer>
-
-        <!-- Bootstrap JS and dependencies -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
